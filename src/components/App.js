@@ -1,6 +1,8 @@
+import Header from "./sections/Header";
+
 function App() {
   return (
-    <h1>Hola Mundo</h1>
+    <Header />
   );
 }
 

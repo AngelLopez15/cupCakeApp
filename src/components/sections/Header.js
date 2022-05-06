@@ -1,22 +1,58 @@
-export const Header = () => {
+import LogoCupCake from "../../img/cupcake.png"
+import { NavLink, Link } from "react-router-dom";
+
+const Header = () => {
   return (
-    <header>
-      <nav>
+    <header className="w-full px-20 py-10" >
+      <nav className="w-full flex justify-between" >
         <div>
-          <a>
-            <img />
-          </a>
+          <Link to="/">
+            <img src={ LogoCupCake } alt="logo cupcake" />
+          </Link>
         </div>
         <div>
-          <ul>
-            <li>
-              <a>Inicio</a>
+          <ul className="flex" >
+            <li className="mx-10">
+              <NavLink 
+                style={({ isActive }) => {
+                  return {
+                    display: "block",
+                    margin: "1rem 0",
+                    color: isActive ? "red" : "",
+                  };
+                }} 
+                to="/"
+              >
+                Inicio
+              </NavLink>
             </li>
-            <li>
-              <a>Cupcakes</a>
+            <li className="mx-10">
+              <NavLink 
+                  style={({ isActive }) => {
+                    return {
+                      display: "block",
+                      margin: "1rem 0",
+                      color: isActive ? "red" : "",
+                    };
+                  }} 
+                to="/cupcakes"
+              >
+                Cupcakes
+              </NavLink>
             </li>
-            <li>
-              <a>Nosotros</a>
+            <li className="mx-10">
+              <NavLink 
+                style={({ isActive }) => {
+                  return {
+                    display: "block",
+                    margin: "1rem 0",
+                    color: isActive ? "red" : "",
+                  };
+                }} 
+                to="/nosotros"
+              >
+                Nosotros
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -24,3 +60,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header;

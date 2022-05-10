@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react"
 import  Cupcake from "../cards/Cupcake"
 
@@ -13,15 +14,21 @@ const CupCakes = (props) => {
 
   useEffect(() => {
 
-    fetch(`${process.env.REACT_APP_URL_API}${peticion}`)
-      .then(response => response.json())
-      .then(data => setCupcake(data))
-      .catch(e => console.log(e))
+    // fetch(`${process.env.REACT_APP_URL_API}${peticion}`)
+      // .then(response => response.json())
+      // .then(data => setCupcake(data))
+      // .catch(e => console.log(e))
+      // Manejo de errores
       // .catch(e=> {
       //   console.log(e);
       //   console.log(error);
       //   setError(true)
       // })
+
+      // haciendo la peticion usando axios
+    axios.get(`${process.env.REACT_APP_URL_API}${peticion}`)
+      .then(({ data }) => setCupcake(data))
+
   }, [peticion])
   
   

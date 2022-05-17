@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
+
 const Cupcake = ( props ) => {
-  
+  // Los propTypes nos permiten decirle al componente que tipo de dato sera nuestra prop
   const { 
     descripcion, 
     sabor, 
@@ -21,6 +23,22 @@ const Cupcake = ( props ) => {
       </div>
     </div>
   )
+}
+
+// Podemos desestructurar los tipos de PropTypes para no repetir tanto PropTypes
+// isRequired nos sirve para decirle a la app que valores son obligatorios
+Cupcake.propTypes = {
+  descripcion: PropTypes.string.isRequired,
+  sabor: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  precio: PropTypes.number,
+  imagen: PropTypes.string,
+}
+
+// Poner Default props
+Cupcake.defaultProps = {
+  imagen: "https://images.unsplash.com/photo-1587668178277-295251f900ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  precio: 0,
 }
 
 export default Cupcake;

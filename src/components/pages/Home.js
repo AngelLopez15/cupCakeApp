@@ -1,3 +1,4 @@
+import Servicios from "../sections/Servicios"
 import CupCakes from "./CupCakes"
 
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
       </div>
       <div className="pt-10">
         <CupCakes peticion="cupcakes?precio_like=30" />
+      </div>
+      <div className="pt-10">
+        <Servicios peticion="servicios" />
       </div>
     </section>
   )
